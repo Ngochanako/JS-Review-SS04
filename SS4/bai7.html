@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let phoneBooks=[];
+        class contact{
+            constructor(name,phone,email){
+                this.name=name;
+                this.phone=phone;
+                this.email=email;
+            }
+            addContact(){
+                let contact={
+                    name: this.name,
+                    phone: this.phone,
+                    email: this.email,
+                }
+                phoneBooks.push(contact)
+            }
+        }
+        let contact1= new contact("ngoc","093835757","fheufheufhu");
+        contact1.addContact();
+        function displayContact(){
+            console.log(phoneBooks)
+        }
+        displayContact()
+    </script>
+</body>
+</html>

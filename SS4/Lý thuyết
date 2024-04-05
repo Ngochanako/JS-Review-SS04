@@ -1,0 +1,12 @@
+1.default param
+2.includes
+3.startswith
+4.endswith
+5.class
+6.modules
+export: xuất ra
++export thường :được export nhiều
++import nạp vào thì đặt trùng tên biến và lấy trong {}
++export default thì chỉ export
+7.promise
+

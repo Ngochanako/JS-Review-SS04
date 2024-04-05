@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>Xin chào <span style="color: red">Admin</span></li>
+        <li><a href="./admin.html">Trang chủ</a></li>
+        <li><a id="login" href="./login.html">Đăng nhập</a></li>
+        <li><a id="logout" href="./admin.html">Đăng xuất</a></li>
+        <li><div id="account"></div></li>
+      </ul>
+    </nav>
+    <div class="alert alert-danger" role="alert" id="alert" style="display: block;">
+     Vui lòng đăng nhập tài khoản!
+    </div>
+    <div id="mainAdmin" style="display: none">
+      <aside>
+        <div class="item" style="color: black">Admin Menu</div>
+        <hr />
+        <div class="item">
+          <button onclick="admin()">Tài khoản Admin</button>
+        </div>
+        <hr />
+        <div class="item"><button onclick="user()">Tài khoản User</button></div>
+        <hr />
+        <div class="item"><button onclick="product()">Sản phẩm</button></div>
+        <hr />
+        <div class="item"><button onclick="Category()">Danh mục</button></div>
+        <hr />
+        <div class="item"><button>Đơn hàng</button></div>
+      </aside>
+      <div class="section">
+        <!-- Bat dau section admin -->
+        <section id="admin" style="display: block">
+          <h2>Tài khoản Admin</h2>
+          <div class="input">
+            <form action="" id="formAdmin">
+              <input id="nameAdmin" type="text" placeholder="Username" />
+              <input id="passwordAdmin" type="text" placeholder="Password" />
+              <button onclick="AddAdmin()" id="addAdmin" class="addAdmin">
+                Add
+              </button>
+            </form>
+            <div class="table">
+              <table>
+                <tr>
+                  <th>STT</th>
+                  <th>Tên tài khoản</th>
+                  <th>Mật khẩu</th>
+                  <th>Sửa</th>
+                  <th>Xóa</th>
+                </tr>
+                <tbody id="tbodyAdmin">
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                      <button>Edit</button>
+                    </td>
+                    <td>
+                      <button>Delete</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="pages">
+              <button>1</button>
+              <button><</button>
+              <button>></button>
+              <button>>></button>
+            </div>
+          </div>
+        </section>
+        <!-- Bat dau section User -->
+        <section id="user" style="display: none">
+          <h2>Tài khoản User</h2>
+          <div class="input">
+            <form action="" id="formUser">
+              <input
+                id="nameUser"
+                type="text"
+                placeholder="Username"
+                required
+              />
+              <input
+                id="passwordUser"
+                type="text"
+                placeholder="Password"
+                required
+              />
+              <input id="emailUser" type="text" placeholder="Email" required />
+              <button onclick="AddUser()" id="addUser" class="addUser">
+                Add
+              </button>
+            </form>
+            <div class="table">
+              <table>
+                <tr>
+                  <th>STT</th>
+                  <th>Tên tài khoản</th>
+                  <th>Mật khẩu</th>
+                  <th>Email</th>
+                  <th>Sửa</th>
+                  <th>Xóa</th>
+                </tr>
+                <tbody id="tbodyUser">
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                      <button>Edit</button>
+                    </td>
+                    <td>
+                      <button>Delete</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="pages">
+              <button>1</button>
+              <button><</button>
+              <button>></button>
+              <button>>></button>
+            </div>
+          </div>
+        </section>
+        <!-- Bat dau section Product -->
+        <section id="product" style="display: none">
+          <h2>Quản lý sản phẩm</h2>
+          <div class="input">
+            <form action="" id="formProduct">
+              <div class="list-input">
+                <input
+                  required
+                  id="description"
+                  type="text"
+                  placeholder="Description"
+                />
+                <input required id="brand" type="text" placeholder="Brand" />
+                <input required id="img" type="text" placeholder="Img" />
+              </div>
+              <div class="list-input">
+                <input
+                  required
+                  id="oldPrice"
+                  type="number"
+                  placeholder="Old Price"
+                />
+                <input
+                  required
+                  id="discount"
+                  type="number"
+                  placeholder="Discount"
+                />
+                <input
+                  required
+                  id="quantity"
+                  type="number"
+                  placeholder="Quantity"
+                />
+              </div>
+              <div class="list-input">
+                <input
+                  required
+                  id="category"
+                  type="text"
+                  placeholder="Category"
+                />
+                <input
+                  required
+                  id="flashSale"
+                  type="text"
+                  placeholder="flashSale"
+                />
+                <input required id="sales" type="number" placeholder="Sales" />
+              </div>
+              <button
+                type="submit"
+                onclick="AddProduct()"
+                class="addProduct"
+                id="addProduct"
+              >
+                Add
+              </button>
+            </form>
+            <div class="table">
+              <table>
+                <tr>
+                  <th>ID</th>
+                  <th>Mô tả</th>
+                  <th>Thương hiệu</th>
+                  <th>Ảnh</th>
+                  <th>Giá gốc</th>
+                  <th>Giảm giá</th>
+                  <th>Số lượng tồn</th>
+                  <th>Danh mục</th>
+                  <th>Flash Sale</th>
+                  <th>Số lượng bán ra</th>
+                  <th>Sửa</th>
+                  <th>Xóa</th>
+                </tr>
+                <tbody id="tbody">
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                      <button onclick="editProduct">Edit</button>
+                    </td>
+                    <td>
+                      <button onclick="deleteProduct">Delete</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="pages">
+              <button class="firtPage">1</button>
+              <button class="prePage"><</button>
+              <button class="nextPage">></button>
+              <button class="lastPage">>></button>
+            </div>
+          </div>
+        </section>
+        <!-- Bắt đầu section Category -->
+        <section id="CategoryId" style="display: none">
+          <h2>Quản lý danh mục</h2>
+          <div class="input">
+            <form action="" id="formCategory">
+              <input id="nameCategory" type="text" placeholder="Tên danh mục" />
+              <input id="dateCategory" type="date" placeholder="Ngày" />
+              <button
+                id="addCategory"
+                class="addCategory"
+                onclick="AddCategory()"
+              >
+                Add
+              </button>
+            </form>
+            <div class="table">
+              <table>
+                <tr>
+                  <th>ID</th>
+                  <th>Tên danh mục</th>
+                  <th>Ngày</th>
+                  <th>Sửa</th>
+                  <th>Xóa</th>
+                </tr>
+                <tbody id="tbodyCategory">
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                      <button>Edit</button>
+                    </td>
+                    <td>
+                      <button>Delete</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

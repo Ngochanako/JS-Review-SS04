@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // default-param:tham số mặc định
+    function sum(a,b=5){
+        return a+b;
+    }
+    sum(4)
+    //class
+    class student{
+        constructor(name,year){
+            this.name=name;
+            this.year=year;
+        }
+        getYear(){
+            let getYear=new Date().getFullYear()-this.year;
+            return getYear;
+        }
+
+    }
+    let std1= new student("hoa",18)
+    console.log(student.getYear)
+</script>
+<script type="module" src="./index.js"></script>
+</html>
